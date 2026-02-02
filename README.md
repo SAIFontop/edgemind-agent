@@ -1,110 +1,230 @@
 # EdgeMind Agent 🧠
 
-> نظام ذكاء اصطناعي يعمل كطبقة تحكم ذكية فوق Raspberry Pi OS
+> An AI-powered intelligent control layer for Raspberry Pi OS
 
-## 🎯 ما هو EdgeMind Agent؟
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-Ready-red.svg)](https://www.raspberrypi.org/)
 
-نظام ذكاء اصطناعي يعمل كـ **طبقة تحكم ذكية** فوق Raspberry Pi OS:
-- ليس جزءًا من النظام
-- لا يملك صلاحيات مباشرة
-- يعمل كـ **عقل تحليل وتخطيط**
+## 🎯 What is EdgeMind Agent?
+
+EdgeMind Agent is an AI system that operates as an **intelligent control layer** on top of Raspberry Pi OS:
+
+- **Not part of the OS** - Runs as a separate service
+- **No direct privileges** - All commands go through security gateway
+- **Analysis & Planning Brain** - Thinks before acting
 
 ```
-النظام الحقيقي = Raspberry Pi OS
-الذكاء = Gemini API
-التنفيذ = Security Gateway (آمن)
+Real System     = Raspberry Pi OS
+Intelligence    = Gemini API
+Execution       = Security Gateway (Safe)
 ```
 
-## 🏗️ هيكل المشروع
+### Key Principle
+
+> **"AI doesn't execute — AI decides"**
+
+The AI analyzes, plans, and recommends. A security gateway validates and executes only whitelisted commands.
+
+## 🏗️ Project Structure
 
 ```
 edgemind-agent/
 ├── src/
 │   ├── core/
-│   │   ├── agent.py           # العقل الرئيسي
-│   │   ├── context_builder.py # جامع السياق
-│   │   └── decision_engine.py # محرك القرارات
+│   │   ├── agent.py           # Main AI agent brain
+│   │   ├── context_builder.py # System context collector
+│   │   └── decision_engine.py # Decision processor
 │   ├── gateway/
-│   │   ├── security_gateway.py # بوابة الأمان
-│   │   ├── whitelist.py        # قائمة الأوامر المسموحة
-│   │   └── executor.py         # منفذ الأوامر
+│   │   ├── security_gateway.py # Security validation layer
+│   │   ├── whitelist.py        # Allowed commands manager
+│   │   └── executor.py         # Safe command executor
 │   ├── api/
-│   │   └── gemini_client.py    # عميل Gemini API
+│   │   └── gemini_client.py    # Gemini API client
 │   ├── interface/
-│   │   ├── cli.py              # واجهة سطر الأوامر
-│   │   └── web_server.py       # واجهة الويب
+│   │   ├── cli.py              # Command-line interface
+│   │   └── web_server.py       # Web dashboard
 │   └── utils/
-│       ├── logger.py           # نظام التسجيل
-│       └── validators.py       # التحقق من المدخلات
+│       ├── logger.py           # Logging system
+│       └── validators.py       # Input validation
 ├── config/
-│   ├── settings.yaml           # إعدادات النظام
-│   ├── whitelist.yaml          # الأوامر المسموحة
-│   └── system_prompt.txt       # برومبت Gemini
-├── logs/                       # سجلات النظام
-├── tests/                      # الاختبارات
+│   ├── settings.yaml           # System configuration
+│   ├── whitelist.yaml          # Whitelisted commands
+│   └── system_prompt.txt       # Gemini system prompt
+├── logs/                       # System logs
+├── tests/                      # Unit tests
 ├── requirements.txt
 └── main.py
 ```
 
-## 🚀 التثبيت
+## 🚀 Installation
+
+### Quick Start
 
 ```bash
-# استنساخ المشروع
-git clone https://github.com/your-repo/edgemind-agent.git
+# Clone the repository
+git clone https://github.com/your-username/edgemind-agent.git
 cd edgemind-agent
 
-# إنشاء بيئة افتراضية
+# Create virtual environment
 python3 -m venv venv
 source venv/bin/activate
 
-# تثبيت المتطلبات
+# Install dependencies
 pip install -r requirements.txt
 
-# إعداد مفتاح API
+# Set up API key
 export GEMINI_API_KEY="your-api-key"
 
-# تشغيل النظام
+# Run the system
 python main.py
 ```
 
-## 📊 تدفق العمل
+### Raspberry Pi Installation
+
+```bash
+# Use the installation script
+chmod +x install.sh
+./install.sh
+
+# Install as a systemd service (optional)
+sudo ./install-service.sh
+```
+
+## 💻 Usage
+
+### Interactive CLI Mode
+```bash
+python main.py
+```
+
+### Web Dashboard Mode
+```bash
+python main.py --web
+# Access at http://localhost:8080
+```
+
+### Single Request Analysis
+```bash
+python main.py --analyze "Check memory usage"
+python main.py --analyze "Why is SSH not working?" --execute
+```
+
+### Check System Status
+```bash
+python main.py --status
+```
+
+## 📊 Workflow
 
 ```
-User
- ↓
+User Request
+     ↓
 EdgeMind Interface (CLI / Web)
- ↓
-Context Builder (Logs / Errors / State)
- ↓
-Gemini API (Brain)
- ↓
-Decision Output (JSON)
- ↓
-Security Gateway
- ↓
-Raspberry Pi OS
+     ↓
+Context Builder (Logs / Errors / System State)
+     ↓
+Gemini API (AI Brain)
+     ↓
+Decision Output (Structured JSON)
+     ↓
+Security Gateway (Validation)
+     ↓
+Raspberry Pi OS (Execution)
 ```
 
-## 🔐 مبدأ الأمان
+## 🔐 Security Model
 
-> **الذكاء لا ينفّذ — الذكاء يقرّر**
+| Component | Role |
+|-----------|------|
+| **Gemini API** | Understands, Analyzes, Plans, Rejects dangerous requests |
+| **Security Gateway** | Validates against whitelist, Blocks dangerous commands |
+| **Raspberry Pi OS** | Only receives pre-approved commands |
 
-| Gemini API | Raspberry Pi OS |
-|------------|-----------------|
-| يفهم | لا يستقبل إلا أوامر مُصرّح بها |
-| يحلل | عبر Whitelist فقط |
-| يخطط | |
-| يرفض الخطر | |
+### Risk Levels
 
-## 📋 أنواع المهام
+| Level | Description | Action |
+|-------|-------------|--------|
+| 🟢 **Low** | Read-only commands | Auto-execute |
+| 🟡 **Medium** | Service control, package management | Requires confirmation |
+| 🔴 **High** | System modifications | Blocked automatically |
 
-- ✅ System diagnostics
-- ✅ Network analysis
-- ✅ Service health
-- ✅ File inspection
-- ✅ Automation planning
-- ✅ Advisory DevOps
+### Blacklisted Commands (Never Executed)
 
-## 📝 الترخيص
+- `rm -rf /` and destructive patterns
+- `mkfs`, `dd` disk operations
+- `shutdown`, `reboot`, `halt`
+- Firewall/routing modifications
+- Fork bombs and malicious patterns
 
-MIT License
+## 📋 Supported Tasks
+
+- ✅ **System Diagnostics** - Memory, CPU, disk, temperature
+- ✅ **Network Analysis** - Interfaces, ports, connectivity
+- ✅ **Service Health** - Status, logs, restart recommendations
+- ✅ **File Inspection** - Safe read-only file operations
+- ✅ **Automation Planning** - Multi-step task planning
+- ✅ **Advisory DevOps** - Best practice recommendations
+
+## ⚙️ Configuration
+
+### Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `GEMINI_API_KEY` | Google Gemini API key | Yes |
+| `HOST` | Web server host | No (default: 0.0.0.0) |
+| `PORT` | Web server port | No (default: 8080) |
+
+### Config Files
+
+- `config/settings.yaml` - General settings, security options
+- `config/whitelist.yaml` - Allowed commands and risk levels
+- `config/system_prompt.txt` - AI behavior instructions
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+pytest tests/ -v
+
+# Run specific test file
+pytest tests/test_core.py -v
+
+# Run with coverage
+pytest tests/ --cov=src
+```
+
+## 📖 API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/` | GET | Web dashboard |
+| `/api/status` | GET | System status |
+| `/api/context` | GET | Full system context |
+| `/api/analyze` | POST | Analyze a request |
+| `/api/execute` | POST | Execute a command |
+| `/api/validate` | POST | Validate a command |
+| `/api/health` | GET | Health check |
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Google Gemini API for AI capabilities
+- Raspberry Pi Foundation
+- The open-source community
+
+---
+
+**Made with ❤️ for Raspberry Pi enthusiasts**
