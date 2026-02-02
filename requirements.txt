@@ -1,0 +1,36 @@
+# EdgeMind Agent Dependencies
+
+# Google Gemini API
+google-generativeai>=0.3.0
+
+# Web Interface
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# CLI Interface
+click>=8.1.0
+rich>=13.0.0
+
+# Configuration
+pyyaml>=6.0.0
+python-dotenv>=1.0.0
+
+# System Monitoring
+psutil>=5.9.0
+
+# Async Support
+aiohttp>=3.9.0
+asyncio>=3.4.3
+
+# Logging
+colorlog>=6.8.0
+
+# Security
+cryptography>=41.0.0
+
+# Validation
+pydantic>=2.5.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
