@@ -1,0 +1,6 @@
+# Core dependencies
+google-generativeai>=0.3.0
+
+# Optional dependencies for enhanced functionality
+# psutil>=5.9.0  # For more detailed system metrics
+# python-systemd>=0.16.1  # For better systemd integration
