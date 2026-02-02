@@ -124,7 +124,7 @@ class TestSecurityPolicy:
         summary = policy.get_policy_summary()
         
         assert 'strict_mode' in summary
-        assert summary['strict_mode'] == True
+        assert summary['strict_mode']
         assert 'whitelisted_commands_count' in summary
         assert 'forbidden_commands_count' in summary
         assert summary['whitelisted_commands_count'] > 0

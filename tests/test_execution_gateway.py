@@ -11,7 +11,7 @@ class TestSafeExecutionGateway:
     def test_initialization(self):
         """Test gateway initialization."""
         gateway = SafeExecutionGateway(dry_run=True)
-        assert gateway.dry_run == True
+        assert gateway.dry_run
         assert len(gateway.execution_history) == 0
 
     def test_dry_run_mode(self):
@@ -23,7 +23,7 @@ class TestSafeExecutionGateway:
         result = gateway.execute_command('ls -la', validation)
         
         assert not result['executed']
-        assert result['dry_run'] == True
+        assert result['dry_run']
         assert result['exit_code'] == 0
 
     def test_blocked_command_execution(self):
@@ -41,7 +41,7 @@ class TestSafeExecutionGateway:
         result = gateway.execute_command('rm -rf /', validation)
         
         assert not result['executed']
-        assert result['blocked'] == True
+        assert result['blocked']
         assert result['exit_code'] == -1
 
     def test_successful_command_execution(self):
@@ -55,7 +55,7 @@ class TestSafeExecutionGateway:
         if result['executed']:
             assert result['exit_code'] == 0
             assert 'test' in result['stdout']
-            assert result['success'] == True
+            assert result['success']
 
     def test_execution_history(self):
         """Test execution history tracking."""
